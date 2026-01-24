@@ -9,43 +9,40 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="profile-section">
-                <img src="img/Diego Escobedo.jpg" alt="Foto de Diego Escobedo" class="profile-img">
-                <div class="profile-info">
-                    <h1>Diego Escobedo</h1>
-                    <div class="contact-links">
-                        <a href="mailto:diego.escobedo@ufm.edu" class="contact-btn">Contáctame</a>
-                        <a href="https://github.com/Diego-Escobedo123" target="_blank" class="contact-btn">GitHub</a>
-                        <a href="https://www.linkedin.com/" target="_blank" class="contact-btn">LinkedIn</a>
-                    </div>
-                </div>
+            <div class="profile">
+                <img src="img/Diego Escobedo.jpg" alt="Foto de Diego Escobedo">
+                <h1>Diego Escobedo</h1>
             </div>
+            <nav class="contact-nav">
+                <a href="mailto:diego.escobedo@ufm.edu">Email</a>
+                <a href="https://github.com/Diego-Escobedo123" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            </nav>
         </header>
 
         <main class="main-content">
-            <div class="left-column">
-                <section class="section">
+            <aside class="sidebar">
+                <section class="section personal-info">
                     <h2>Datos Personales</h2>
-                    <ul class="personal-data">
-                        <li><strong>Lugar de Nacimiento:</strong> Puerto Barrios Izabal</li>
-                        <li><strong>Fecha de Nacimiento:</strong> 15/06/2007</li>
+                    <ul>
+                        <li><strong>Nacimiento:</strong> Puerto Barrios Izabal</li>
+                        <li><strong>Fecha:</strong> 15/06/2007</li>
                         <li><strong>Edad:</strong> 18 años</li>
-                        <li><strong>Estado Civil:</strong> Soltero</li>
                         <li><strong>Nacionalidad:</strong> Guatemalteco</li>
                     </ul>
                 </section>
 
-                <section class="section">
-                    <h2>Lenguajes de Programación</h2>
-                    <ul class="skills-list">
+                <section class="section skills">
+                    <h2>Lenguajes</h2>
+                    <ul>
                         <li>Python</li>
                         <li>Java</li>
                     </ul>
                 </section>
 
-                <section class="section">
+                <section class="section virtues">
                     <h2>Virtudes</h2>
-                    <ul class="virtues-list">
+                    <ul>
                         <li>Responsable</li>
                         <li>Puntual</li>
                         <li>Honesto</li>
@@ -53,72 +50,45 @@
                         <li>Productivo</li>
                     </ul>
                 </section>
-            </div>
+            </aside>
 
-            <div class="right-column">
-                <section class="section" id="educacion">
+            <div class="content">
+                <section class="section education">
                     <h2>Educación</h2>
-                    <table class="education-table">
-                        <caption>Historial Académico</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">Año</th>
-                                <th scope="col">Institución</th>
-                                <th scope="col">Título</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2024</td>
-                                <td>Colegio Bilingue ABC</td>
-                                <td>
-                                    <img src="img/TituloColegio.png" alt="Título de Bachillerato CCLL del colegio" class="certificate-img">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2025</td>
-                                <td>Universidad Francisco Marroquín</td>
-                                <td>
-                                    <img src="img/Diplomaliderazgo.png" alt="Diploma del curso de liderazgo" class="certificate-img">
-                                </td>
-                            </tr>
-                        </tbody>
+                    <table>
+                        <tr>
+                            <td>2024</td>
+                            <td>Colegio Bilingue ABC</td>
+                            <td><img src="img/TituloColegio.png" alt="Título Bachillerato" class="certificate"></td>
+                        </tr>
+                        <tr>
+                            <td>2025</td>
+                            <td>Universidad Francisco Marroquín</td>
+                            <td><img src="img/Diplomaliderazgo.png" alt="Diploma Liderazgo" class="certificate"></td>
+                        </tr>
                     </table>
                 </section>
 
-                <section class="section" id="competencias">
+                <section class="section competences">
                     <h2>Competencias Escolares</h2>
-                    <table class="competences-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Año</th>
-                                <th scope="col">Actividad</th>
-                                <th scope="col">Certificado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2023</td>
-                                <td>Spelling Bee</td>
-                                <td>
-                                    <img src="img/spellingbee.png" alt="Certificado de primer lugar spelling Bee" class="certificate-img">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2024</td>
-                                <td>Olimpiada Matemática Departamental</td>
-                                <td>
-                                    <img src="img/olimpiadamatematica.png" alt="Olimpiada matematica a nivel departamental" class="certificate-img">
-                                </td>
-                            </tr>
-                        </tbody>
+                    <table>
+                        <tr>
+                            <td>2023</td>
+                            <td>Spelling Bee</td>
+                            <td><img src="img/spellingbee.png" alt="Certificado Spelling Bee" class="certificate"></td>
+                        </tr>
+                        <tr>
+                            <td>2024</td>
+                            <td>Olimpiada Matemática</td>
+                            <td><img src="img/olimpiadamatematica.png" alt="Certificado Olimpiada" class="certificate"></td>
+                        </tr>
                     </table>
                 </section>
             </div>
         </main>
 
         <footer class="footer">
-            <p>© 2024 Diego Escobedo - Todos los derechos reservados</p>
+            <p>© 2026 Diego Escobedo</p>
         </footer>
     </div>
 </body>
