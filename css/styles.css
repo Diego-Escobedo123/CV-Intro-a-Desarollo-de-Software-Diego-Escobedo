@@ -172,3 +172,44 @@ td:first-child {
 .education tr:hover, .competences tr:hover {
     background: #f0f8ff;
 }
+
+/* Uso de Flexbox en la cabecera para el contacto */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.contact-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr 2fr;
+        gap: 40px;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
