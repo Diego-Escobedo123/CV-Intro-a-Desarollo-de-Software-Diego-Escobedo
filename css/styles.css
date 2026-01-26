@@ -267,3 +267,101 @@ td:first-child {
         justify-content: center;
     }
 }
+
+/* Diseño responsivo en tablets */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .profile img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 0;
+    }
+
+    .contact-nav {
+        padding: 12px 15px;
+    }
+
+    .section {
+        padding: 25px;
+    }
+
+    .certificate {
+        max-width: 180px;
+    }
+}
+
+/* Diseño de escritorio responsivo */
+@media (min-width: 1024px) {
+    body {
+        padding: 40px;
+    }
+    
+    .container {
+        padding: 40px;
+    }
+    
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 0;
+    }
+    
+    .profile h1 {
+        font-size: 32px;
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr 2fr;
+        gap: 40px;
+    }
+    
+    .contact-nav {
+        justify-content: flex-end;
+    }
+    
+    .section {
+        padding: 30px;
+    }
+    
+    .certificate {
+        max-width: 250px;
+        transition: transform 0.3s;
+    }
+    
+    .certificate:hover {
+        transform: scale(1.05);
+    }
+    
+    .education table, .competences table {
+        width: 100%;
+    }
+    
+    th, td {
+        padding: 15px;
+    }
+}
