@@ -39,6 +39,24 @@ body {
     object-position: center;
 }
 
+/* Botón de descarga PDF */
+#downloadPdf {
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#downloadPdf:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.alert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
 /* Secciones */
 .section {
     margin-bottom: 30px;
@@ -66,28 +84,42 @@ body {
 }
 
 /* Tablas */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.table {
+    margin-bottom: 0;
 }
 
-td:first-child {
-    font-weight: bold;
-    color: #2c3e50;
+.table th {
+    font-weight: 600;
+    padding: 1rem;
 }
 
-.certificate {
-    max-width: 200px;
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Certificados */
+.certificate-img {
+    max-width: 100%;
     height: auto;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    max-height: 150px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid #dee2e6 !important;
+    transition: transform 0.3s ease;
+}
+
+.certificate-img:hover {
+    transform: scale(1.03);
 }
 
 /* Pie de página */
