@@ -12,11 +12,12 @@
 </head>
 <body class="py-4">
     <div class="container py-4">
-    <div class="alert alert-info alert-dismissible fade show" role="alert">
-        <i class="bi bi-info-circle me-2"></i>
-        <strong>¡Bienvenido a mi CV digital!</strong> Estoy en busca de nuevas oportunidades de aprendizaje y crecimiento.
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <i class="bi bi-info-circle me-2"></i>
+            <strong>¡Bienvenido a mi CV digital!</strong> Estoy en busca de nuevas oportunidades de aprendizaje y crecimiento.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
         <header class="cv-header text-white mb-5">
             <div class="profile text-center mb-4">
                 <img src="img/Diego Escobedo.jpg" alt="Foto de Diego Escobedo" 
@@ -25,7 +26,13 @@
                 <p class="lead">Estudiante de la Universidad Francisco Marroquín</p>
             </div>
 
-            <!-- Menú de Contacto -->
+            <div class="text-center mb-4">
+                <button class="btn btn-light btn-lg px-4 shadow-sm" id="downloadPdf">
+                    <i class="bi bi-file-earmark-pdf me-2"></i>Descargar como PDF
+                </button>
+            </div>
+
+            <!-- Menú de contacto -->
             <nav class="contact-nav d-flex justify-content-center flex-wrap gap-3">
                 <a href="mailto:diego.escobedo@ufm.edu" class="btn btn-outline-light">
                     <i class="bi bi-envelope me-2"></i>Email
@@ -37,13 +44,6 @@
                     <i class="bi bi-linkedin me-2"></i>LinkedIn
                 </a>
             </nav>
-
-            <!-- PDF Download Button -->
-        <div class="text-center mb-4">
-            <button class="btn btn-light btn-lg px-4 shadow-sm" id="downloadPdf">
-                <i class="bi bi-file-earmark-pdf me-2"></i>Descargar como PDF
-            </button>
-        </div>
         </header>
 
         <main class="row g-4">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
 
-                <!-- Tarjetas de Habilidades -->
+                <!-- Tarjetas de habilidades -->
                 <div class="card shadow-sm mb-4">
                     <div class="card-header bg-success text-white">
                         <h3 class="card-title h5 mb-0">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
 
-                <!-- Tarjetas de Virtudes -->
+                <!-- Tarjetas de virtudes -->
                 <div class="card shadow-sm">
                     <div class="card-header bg-warning text-dark">
                         <h3 class="card-title h5 mb-0">
@@ -99,7 +99,6 @@
             </aside>
 
             <div class="col-lg-8">
-                <!-- Sección de Educación -->
                 <section class="education mb-5">
                     <h2 class="h3 mb-4 text-primary border-bottom pb-2">
                         <i class="bi bi-mortarboard me-2"></i>Educación
@@ -175,7 +174,7 @@
             </div>
         </main>
 
-        <!-- Pie de página -->
+        <!-- Footer -->
         <footer class="footer mt-5 pt-4 border-top">
             <div class="text-center">
                 <p class="text-muted mb-2">
@@ -187,7 +186,5 @@
             </div>
         </footer>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
