@@ -37,109 +37,24 @@ body {
     object-position: center;
 }
 
-/* Componentes de tarjetas */
-.card {
-    border: none;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+/* Saludo dinámico */
+#greeting {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-}
-
-.card-header {
-    border-radius: 10px 10px 0 0 !important;
-    padding: 1rem 1.25rem;
-}
-
-.card-body {
-    padding: 1.5rem;
-}
-
-/* Certificados */
+/* Imágenes de certificados */
 .certificate-img {
     max-width: 100%;
     height: auto;
     max-height: 150px;
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     border: 1px solid #dee2e6 !important;
     transition: transform 0.3s ease;
 }
 
 .certificate-img:hover {
     transform: scale(1.03);
-}
-
-/* Tablas */
-.table-responsive {
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.table {
-    margin-bottom: 0;
-}
-
-.table th {
-    font-weight: 600;
-    padding: 1rem;
-}
-
-.table td {
-    padding: 1rem;
-    vertical-align: middle;
-}
-
-.table-hover tbody tr:hover {
-    background-color: rgba(0, 123, 255, 0.05);
-}
-
-/* Badges */
-.badge {
-    border-radius: 20px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.badge:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Botones de contacto */
-.contact-nav .btn {
-    border-radius: 25px;
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    min-width: 140px;
-}
-
-.contact-nav .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
-}
-
-/* Botón de descarga PDF */
-#downloadPdf {
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-#downloadPdf:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-/* Alertas */
-.alert {
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 /* Pie de página */
@@ -151,23 +66,7 @@ body {
     color: #666;
 }
 
-.footer p {
-    margin-bottom: 0.5rem;
-}
-
-.display-5 {
-    margin-bottom: 0.5rem;
-}
-
-.lead {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1.5rem;
-}
-
-.text-white-50 {
-    opacity: 0.8;
-}
-
+/* Modo completo oscuro */
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
@@ -181,18 +80,139 @@ body.dark-mode .container {
 body.dark-mode .card {
     background-color: #2d2d2d;
     color: #ffffff;
+    border-color: #444;
 }
 
 body.dark-mode .card-header {
     background-color: #3d3d3d !important;
+    color: #ffffff;
+    border-bottom-color: #444;
 }
 
+body.dark-mode .card-body {
+    color: #ffffff;
+}
+
+body.dark-mode .card-body strong {
+    color: #ffffff;
+}
+
+body.dark-mode .card-body li {
+    color: #ffffff;
+}
+
+body.dark-mode .card-body ul {
+    color: #ffffff;
+}
+
+body.dark-mode .badge {
+    color: #ffffff !important;
+}
+
+body.dark-mode .badge.bg-success {
+    background-color: #28a745 !important;
+}
+
+body.dark-mode .badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+body.dark-mode .badge.bg-info {
+    background-color: #17a2b8 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .badge.bg-secondary {
+    background-color: #6c757d !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .badge.bg-dark {
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+}
+
+/* Buscador en modo oscuro */
+body.dark-mode #skillSearch {
+    background-color: #495057;
+    color: #ffffff;
+    border-color: #6c757d;
+}
+
+body.dark-mode #skillSearch::placeholder {
+    color: #adb5bd;
+}
+
+body.dark-mode .input-group .btn-light {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #ffffff;
+}
+
+body.dark-mode .input-group .btn-light:hover {
+    background-color: #5a6268;
+}
+
+/* Tablas en modo oscuro */
 body.dark-mode .table {
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-mode .table th {
+    background-color: #3d3d3d;
+    border-color: #444;
+    color: #ffffff;
+}
+
+body.dark-mode .table td {
+    border-color: #444;
     color: #ffffff;
 }
 
 body.dark-mode .table-hover tbody tr:hover {
     background-color: #3d3d3d;
+}
+
+/* Títulos en modo oscuro */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .h3,
+body.dark-mode .text-primary {
+    color: #ffffff !important;
+}
+
+body.dark-mode .border-bottom {
+    border-bottom-color: #444 !important;
+}
+
+body.dark-mode .text-muted {
+    color: #adb5bd !important;
+}
+
+body.dark-mode .bi {
+    color: #ffffff;
+}
+
+body.dark-mode .bi-person-circle,
+body.dark-mode .bi-code-slash,
+body.dark-mode .bi-star-fill,
+body.dark-mode .bi-mortarboard,
+body.dark-mode .bi-trophy {
+    color: #ffffff;
+}
+
+body.dark-mode .alert-info {
+    background-color: #0c5460;
+    border-color: #0c5460;
+    color: #d1ecf1;
+}
+
+body.dark-mode .footer {
+    border-top-color: #444;
+    color: #adb5bd;
 }
 
 /* Diseño Responsivo */
@@ -291,4 +311,78 @@ body.dark-mode .table-hover tbody tr:hover {
     .certificate-img {
         max-height: 180px;
     }
+}
+
+/* Estilos para el buscador */
+.input-group-sm {
+    max-width: 200px;
+}
+
+#skillSearch {
+    border-radius: 5px 0 0 5px;
+}
+
+#skillSearch:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Animación para resultados del buscador */
+.skill-badge {
+    transition: all 0.3s ease;
+}
+
+/* Mensaje de resultados no encontrados */
+#no-results {
+    font-style: italic;
+    color: #6c757d;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Botones de contacto */
+.contact-nav .btn {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.contact-nav .btn:hover {
+    transform: scale(1.05);
+}
+
+#downloadPdf {
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#downloadPdf:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.alert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.display-5 {
+    margin-bottom: 0.5rem;
+}
+
+.lead {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+.text-white-50 {
+    opacity: 0.8;
 }

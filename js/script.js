@@ -1,89 +1,112 @@
-function updateGreeting() {
-    const hour = new Date().getHours();
-    const greetingElement = document.getElementById('greeting');
-    let greeting = '';
+// 1. Saludo Dinámico
+const hora = new Date().getHours();
+let saludo = '';
+
+if (hora < 12) saludo = '¡Buenos días!';
+else if (hora < 19) saludo = '¡Buenas tardes!';
+else saludo = '¡Buenas noches!';
+
+document.getElementById('greeting').textContent = saludo;
+
+// 2. Toggle educación
+document.getElementById('toggleEducation').addEventListener('click', function() {
+    const tabla = document.querySelector('.education .table-responsive');
+    const estaOculto = tabla.style.display === 'none';
     
-    if (hour < 12) {
-        greeting = '¡Buenos días!';
-    } else if (hour < 19) {
-        greeting = '¡Buenas tardes!';
+    tabla.style.display = estaOculto ? 'block' : 'none';
+    this.innerHTML = estaOculto ? 
+        '<i class="bi bi-eye me-1"></i>Mostrar' : 
+        '<i class="bi bi-eye-slash me-1"></i>Ocultar';
+});
+
+// 3. Modo oscuro
+const modoBtn = document.getElementById('darkModeToggle');
+
+// Cargar preferencia guardada
+if (localStorage.getItem('modoOscuro') === 'activado') {
+    document.body.classList.add('dark-mode');
+    modoBtn.innerHTML = '<i class="bi bi-sun me-1"></i>Modo Claro';
+}
+
+modoBtn.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('modoOscuro', 'activado');
+        this.innerHTML = '<i class="bi bi-sun me-1 bi"></i>Modo Claro';
     } else {
-        greeting = '¡Buenas noches!';
+        localStorage.setItem('modoOscuro', 'desactivado');
+        this.innerHTML = '<i class="bi bi-moon me-1"></i>Modo Oscuro';
     }
-    
-    greetingElement.textContent = greeting;
+});
+
+// 4. Toggle de Contacto
+const contactoBtn = document.getElementById('toggleContact');
+const contactoNav = document.querySelector('.contact-nav');
+
+// Ocultar en móviles al cargar
+if (window.innerWidth < 768) {
+    contactoNav.style.display = 'none';
 }
 
-// Ejecutar cuando cargue la página
-document.addEventListener('DOMContentLoaded', updateGreeting);
-
-// Botón para mostrar/ocultar la sección de educación
-function setupEducationToggle() {
-    const toggleBtn = document.getElementById('toggleEducation');
-    const educationSection = document.querySelector('.education .table-responsive');
+contactoBtn.addEventListener('click', function() {
+    const estaOculto = contactoNav.style.display === 'none';
     
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', function() {
-            if (educationSection.style.display === 'none') {
-                educationSection.style.display = 'block';
-                toggleBtn.innerHTML = '<i class="bi bi-eye me-1"></i>Mostrar';
-            } else {
-                educationSection.style.display = 'none';
-                toggleBtn.innerHTML = '<i class="bi bi-eye-slash me-1"></i>Ocultar';
-            }
-        });
-    }
-}
+    contactoNav.style.display = estaOculto ? 'flex' : 'none';
+    this.innerHTML = estaOculto ? 
+        '<i class="bi bi-chevron-up me-1"></i>Ocultar Contacto' : 
+        '<i class="bi bi-chevron-down me-1"></i>Mostrar Contacto';
+});
 
-document.addEventListener('DOMContentLoaded', setupEducationToggle);
+// 5. Buscador de habilidades
+const buscador = document.getElementById('skillSearch');
+const habilidades = document.querySelectorAll('.skill-badge');
 
-// Modo oscuro/claro
-function setupDarkMode() {
-    const toggleBtn = document.getElementById('darkModeToggle');
+buscador.addEventListener('input', function() {
+    const textoBuscado = this.value.toLowerCase().trim();
     
-    if (toggleBtn) {
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            toggleBtn.innerHTML = '<i class="bi bi-sun me-1"></i>Modo Claro';
+    habilidades.forEach(habilidad => {
+        const textoHabilidad = habilidad.textContent.toLowerCase();
+
+        if (textoHabilidad.includes(textoBuscado)) {
+            habilidad.style.display = 'inline-block';
+            habilidad.style.opacity = '1';
+        } else {
+            habilidad.style.display = 'none';
+            habilidad.style.opacity = '0.3';
         }
-        
-        toggleBtn.addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-            
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled');
-                toggleBtn.innerHTML = '<i class="bi bi-sun me-1"></i>Modo Claro';
-            } else {
-                localStorage.setItem('darkMode', 'disabled');
-                toggleBtn.innerHTML = '<i class="bi bi-moon me-1"></i>Modo Oscuro';
-            }
-        });
-    }
-}
-
-document.addEventListener('DOMContentLoaded', setupDarkMode);
-
-// Botón para mostrar/ocultar contacto
-function setupContactToggle() {
-    const toggleBtn = document.getElementById('toggleContact');
-    const contactNav = document.querySelector('.contact-nav');
+    });
     
-    if (toggleBtn && contactNav) {
-        if (window.innerWidth < 768) {
-            contactNav.style.display = 'none';
-            toggleBtn.innerHTML = '<i class="bi bi-chevron-down me-1"></i>Mostrar Contacto';
+    // Mostrar mensaje si no hay resultados
+    const hayResultados = Array.from(habilidades).some(h => 
+        h.textContent.toLowerCase().includes(textoBuscado)
+    );
+    
+    if (textoBuscado && !hayResultados) {
+        if (!document.getElementById('no-results')) {
+            const mensaje = document.createElement('div');
+            mensaje.id = 'no-results';
+            mensaje.className = 'mt-2 text-muted small';
+            mensaje.textContent = 'No se encontraron habilidades con ese nombre';
+            document.getElementById('skillsList').appendChild(mensaje);
         }
-        
-        toggleBtn.addEventListener('click', function() {
-            if (contactNav.style.display === 'none') {
-                contactNav.style.display = 'flex';
-                toggleBtn.innerHTML = '<i class="bi bi-chevron-up me-1"></i>Ocultar Contacto';
-            } else {
-                contactNav.style.display = 'none';
-                toggleBtn.innerHTML = '<i class="bi bi-chevron-down me-1"></i>Mostrar Contacto';
-            }
-        });
+    } else {
+        const mensaje = document.getElementById('no-results');
+        if (mensaje) mensaje.remove();
     }
-}
+});
 
-document.addEventListener('DOMContentLoaded', setupContactToggle);
+document.querySelector('#skillSearch + .btn').addEventListener('click', function() {
+    buscador.value = '';
+    buscador.dispatchEvent(new Event('input'));
+});
+
+document.getElementById('downloadPdf').addEventListener('click', function() {
+    window.print();
+    
+    alert('Para guardar como PDF:\n1. En la ventana de impresión\n2. Selecciona "Guardar como PDF"\n3. Haz clic en Guardar');
+});
+
+window.addEventListener('load', function() {
+    document.querySelector('.education .table-responsive').style.display = 'block';
+});
