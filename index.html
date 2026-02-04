@@ -15,7 +15,7 @@
     <div class="container py-4">
         <div class="alert alert-info alert-dismissible fade show" role="alert">
             <i class="bi bi-info-circle me-2"></i>
-            <strong>¡Bienvenido a mi CV digital!</strong> Estoy en busca de nuevas oportunidades de aprendizaje y crecimiento.
+            <strong id="greeting">¡Bienvenido a mi CV digital!</strong> Estoy en busca de nuevas oportunidades de aprendizaje y crecimiento.
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
 
@@ -100,41 +100,46 @@
             </aside>
 
             <div class="col-lg-8">
-                <section class="education mb-5">
-                    <h2 class="h3 mb-4 text-primary border-bottom pb-2">
-                        <i class="bi bi-mortarboard me-2"></i>Educación
-                    </h2>
-                    
-                    <div class="table-responsive">
-                        <table class="table table-hover table-bordered align-middle">
-                            <thead class="table-primary">
-                                <tr>
-                                    <th scope="col" class="col-2">Año</th>
-                                    <th scope="col" class="col-4">Institución</th>
-                                    <th scope="col" class="col-6">Certificado</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="fw-bold">2024</td>
-                                    <td>Colegio Bilingue ABC</td>
-                                    <td class="text-center">
-                                        <img src="img/TituloColegio.png" alt="Título Bachillerato" 
-                                             class="certificate-img img-fluid rounded shadow-sm border">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-bold">2025</td>
-                                    <td>Universidad Francisco Marroquín</td>
-                                    <td class="text-center">
-                                        <img src="img/Diplomaliderazgo.png" alt="Diploma Liderazgo" 
-                                             class="certificate-img img-fluid rounded shadow-sm border">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+                <section class="education mb-5" id="educationSection">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h3 text-primary border-bottom pb-2">
+            <i class="bi bi-mortarboard me-2"></i>Educación
+        </h2>
+        <button class="btn btn-outline-primary btn-sm" id="toggleEducation">
+            <i class="bi bi-eye me-2"></i>Mostrar
+        </button>
+    </div>
+    
+    <div class="table-responsive" id="educationContent">
+        <table class="table table-hover table-bordered align-middle">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col" class="col-2">Año</th>
+                    <th scope="col" class="col-4">Institución</th>
+                    <th scope="col" class="col-6">Certificado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fw-bold">2024</td>
+                    <td>Colegio Bilingue ABC</td>
+                    <td class="text-center">
+                        <img src="img/TituloColegio.png" alt="Título Bachillerato" 
+                             class="certificate-img img-fluid rounded shadow-sm border">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">2025</td>
+                    <td>Universidad Francisco Marroquín</td>
+                    <td class="text-center">
+                        <img src="img/Diplomaliderazgo.png" alt="Diploma Liderazgo" 
+                             class="certificate-img img-fluid rounded shadow-sm border">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 
                 <!-- Sección de Competencias -->
                 <section class="competences">
