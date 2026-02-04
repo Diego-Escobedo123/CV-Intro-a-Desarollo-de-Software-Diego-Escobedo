@@ -168,6 +168,33 @@ body {
     opacity: 0.8;
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode .card {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+body.dark-mode .card-header {
+    background-color: #3d3d3d !important;
+}
+
+body.dark-mode .table {
+    color: #ffffff;
+}
+
+body.dark-mode .table-hover tbody tr:hover {
+    background-color: #3d3d3d;
+}
+
 /* Diseño Responsivo */
 
 /* Móviles (≤480px) */

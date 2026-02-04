@@ -36,3 +36,29 @@ function setupEducationToggle() {
 }
 
 document.addEventListener('DOMContentLoaded', setupEducationToggle);
+
+// Modo oscuro/claro
+function setupDarkMode() {
+    const toggleBtn = document.getElementById('darkModeToggle');
+    
+    if (toggleBtn) {
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            toggleBtn.innerHTML = '<i class="bi bi-sun me-1"></i>Modo Claro';
+        }
+        
+        toggleBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                toggleBtn.innerHTML = '<i class="bi bi-sun me-1"></i>Modo Claro';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                toggleBtn.innerHTML = '<i class="bi bi-moon me-1"></i>Modo Oscuro';
+            }
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', setupDarkMode);
