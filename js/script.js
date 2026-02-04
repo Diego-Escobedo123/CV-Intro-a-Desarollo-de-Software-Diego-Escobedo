@@ -62,3 +62,28 @@ function setupDarkMode() {
 }
 
 document.addEventListener('DOMContentLoaded', setupDarkMode);
+
+// Botón para mostrar/ocultar contacto
+function setupContactToggle() {
+    const toggleBtn = document.getElementById('toggleContact');
+    const contactNav = document.querySelector('.contact-nav');
+    
+    if (toggleBtn && contactNav) {
+        if (window.innerWidth < 768) {
+            contactNav.style.display = 'none';
+            toggleBtn.innerHTML = '<i class="bi bi-chevron-down me-1"></i>Mostrar Contacto';
+        }
+        
+        toggleBtn.addEventListener('click', function() {
+            if (contactNav.style.display === 'none') {
+                contactNav.style.display = 'flex';
+                toggleBtn.innerHTML = '<i class="bi bi-chevron-up me-1"></i>Ocultar Contacto';
+            } else {
+                contactNav.style.display = 'none';
+                toggleBtn.innerHTML = '<i class="bi bi-chevron-down me-1"></i>Mostrar Contacto';
+            }
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', setupContactToggle);
